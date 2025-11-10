@@ -16,6 +16,9 @@ class PageController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $title = "Neem contact op";
+        $email = "info@todolist.nl";
+
+        return view('contact', compact('title', 'email'));
     }
 }
