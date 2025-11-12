@@ -17,25 +17,25 @@ class TasksSeeder extends Seeder
             [
                 'title' => 'Task 1',
                 'description' => 'Description 1',
-                'completed' => false,
+                'is_completed' => false,
                 'due_date' => '2025-11-11',
             ],
             [
                 'title' => 'Task 2',
                 'description' => 'Description 2',
-                'completed' => false,
+                'is_completed' => false,
                 'due_date' => '2025-11-12',
             ],
             [
                 'title' => 'Task 3',
                 'description' => 'Description 3',
-                'completed' => false,
+                'is_completed' => false,
                 'due_date' => '2025-11-13',
             ],
             [
                 'title' => 'Task 4',
                 'description' => 'Description 4',
-                'completed' => false,
+                'is_completed' => false,
                 'due_date' => '2025-11-14',
             ],
         ];
