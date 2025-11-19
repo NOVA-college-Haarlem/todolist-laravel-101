@@ -14,4 +14,14 @@ class CategoryController extends Controller
 
         return view('categories.index', compact('categories', 'title'));
     }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }
