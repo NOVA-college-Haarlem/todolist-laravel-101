@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(
             [
+                CategorySeeder::class,
                 TasksSeeder::class,
-                CategorySeeder::class
             ]
         );
 
