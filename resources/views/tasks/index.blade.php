@@ -1,4 +1,11 @@
 <x-base-layout>
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
+
     <div class="max-w-3xl mx-auto py-10">
         <h1 class="text-3xl font-bold mb-8 text-slate-800">{{$title}}</h1>
         @if($tasks->isEmpty())
@@ -7,6 +14,7 @@
                 <p class="text-lg">Geen taken gevonden.</p>
             </div>
         @else
+
         <ul class="space-y-6">
             @foreach($tasks as $task)
                 <li class="todo-item bg-white rounded-lg shadow-sm p-6 flex flex-col gap-2 border border-slate-100 hover:bg-indigo-50">

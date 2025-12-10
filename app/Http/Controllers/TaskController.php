@@ -28,7 +28,9 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('tasks.create');
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('tasks.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request)
@@ -47,8 +49,12 @@ class TaskController extends Controller
         $task->due_date = $request->due_date;
         $task->is_completed = $request->completed ? false : true;
         $task->user_id = 1; //tijdelijke user_id, later aanpassen naar ingelogde gebruiker
-        $task->category_id = 1; //tijdelijke category_id, later aanpassen naar gekozen categorie
+        $task->category_id = $request->category;
         $task->save(); //hiermee slaan we de taak op in de database
+
+        $task->tags()->sync($request->tags);
+
+        return redirect()->route('tasks.index')->with('status', 'Taak succesvol aangemaakt');
     }
 
     public function edit($id)
